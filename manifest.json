@@ -1,11 +1,12 @@
 {
 	"name": "Copy Link Text",
-	"description": "Adds a context menu entry for copying the text of a link object.",
+	"description": "Holding shift now disables links so that they can be selected without following.",
 	"version": "0.1",
-	"permissions": ["contextMenus"],
-	"background": {
-		"persistent": "false",
-		"scripts": "copy.js"
-	},
+	"content_scripts": [
+		{
+			"matches" : ["http://*/*", "https://*/*"],
+			"js" : ["copy.js"]
+		}
+	],
 	"manifest_version": 2
 }
