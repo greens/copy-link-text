@@ -2,7 +2,8 @@ var href = ""
 var target = null
 
 document.addEventListener('mousedown', function(event) {
-	if ((event.target.tagName == 'a' || event.target.tagName == 'A') && event.shiftKey) {
+	if ((event.target.tagName == 'a' || event.target.tagName == 'A') && 
+		event.shiftKey && event.button == 0) {
 		target = event.target
 		href = target.getAttribute('href')
 		target.removeAttribute('href')
